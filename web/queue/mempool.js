@@ -19,73 +19,12 @@
 var charts;
 var classes = [ "btc", "bch", "ltc", "dash", "doge", "bsv", "eth" ];
 var config = [
-    {"name":"BTC",
-     "classname": "btc",
-     "title":"Bitcoin Core 0.19.1.  Huge mempool limit and no timeout, to prevent any transactions to be dropped.",
-/*
-     "url":"https://jochen-hoenicke.de/queue/",
-     "sizeunit":"MB",
-     "priceunit":"sat/B",
-     "symbol":"BTC",
-     "satPerUnit": 100000000.0,
-     "feelevel": 1,
-     "ranges": [ 0,1,2,5,10,20,30,40,50,60,70,80,90,100,120,140,160,180,200,220,240,260,280,300,350,400,450,500,550,600,650,700,750,800,850,900,950,1000,1400,2000,3000,5000,7000,10000 ],
-     "show":   [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 14, 15, 17, 18, 20, 23, 25, 27, 29, 31 ],
-     "colors": [
-   "#535154", "#0000ac", "#0000ff", "#8080ff",
-   "#00c000", "#00e000", "#90e090", 
-   "#808000", "#989800", "#b0b000", "#c8c800", "#e0e000", "#e0e030", "#e0e060",
-   "#800000", "#a00000", "#c00000", "#e00000", "#e02020", "#e04040", "#e06060",
-   "#800080", "#000000",
-     ],
-     "inc": false},
-*/
-     "url":"https://johoe.jochen-hoenicke.de/queue/",
-     "sizeunit":"MB",
-     "priceunit":"sat/B",
-     "symbol":"BTC",
-     "satPerUnit": 100000000.0,
-     "feelevel": 1,
-     "ranges": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 17, 20, 25, 30, 40, 50, 60, 70, 80, 100, 120, 140, 170, 200, 250, 300, 400, 500, 600, 700, 800, 1000, 1200, 1400, 1700, 2000, 2500, 3000, 4000, 5000, 6000, 7000, 8000, 10000 ],
-     "show":   [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ],
-     "colors": [
-   "#535154", "#0000ac", "#0000c2", "#0000d8", "#0000ec", "#0000ff", "#2c2cff", "#5858ff", "#8080ff",
-   "#008000", "#00a000", "#00c000", "#00e000", "#30e030", "#60e060", "#90e090",
-   "#808000", "#989800", "#b0b000", "#c8c800", "#e0e000", "#e0e030", "#e0e060",
-   "#800000", "#a00000", "#c00000", "#e00000", "#e02020", "#e04040", "#e06060",
-   "#800080", "#ac00ac", "#d800d8", "#ff00ff", "#ff2cff", "#ff58ff", "#ff80ff",
-   "#000000"
-             ],
-     "inc": true},
-    {"name":"BTC (default mempool)",
-     "classname": "btc",
-     "title":"Bitcoin Core with default mempool settings (300 MB + 14 days timeout).",
-     "url":"https://core.jochen-hoenicke.de/queue/",
-     "sizeunit":"MB",
-     "priceunit":"sat/B",
-     "symbol":"BTC",
-     "satPerUnit": 100000000.0,
-     "feelevel": 0,
-     "ranges": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 17, 20, 25, 30, 40, 50, 60, 70, 80, 100, 120, 140, 170, 200, 250, 300, 400, 500, 600, 700, 800, 1000, 1200, 1400, 1700, 2000, 2500, 3000, 4000, 5000, 6000, 7000, 8000, 10000 ],
-     "show":   [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ],
-     "colors": [
-   "#535154", "#0000ac", "#0000c2", "#0000d8", "#0000ec", "#0000ff", "#2c2cff", "#5858ff", "#8080ff",
-   "#008000", "#00a000", "#00c000", "#00e000", "#30e030", "#60e060", "#90e090",
-   "#808000", "#989800", "#b0b000", "#c8c800", "#e0e000", "#e0e030", "#e0e060",
-   "#800000", "#a00000", "#c00000", "#e00000", "#e02020", "#e04040", "#e06060",
-   "#800080", "#ac00ac", "#d800d8", "#ff00ff", "#ff2cff", "#ff58ff", "#ff80ff",
-   "#000000"
-             ],
-     "inc": true},
     {"name":"ETH",
-     "classname":"eth",
-     "title":"geth 1.9.25 with 150k slots (experimental)",
-     "url":"https://johoe.jochen-hoenicke.de/queue/ethereum/",
+     "title":"Ethereum. No limit and no timeout, to prevent any transactions to be dropped.",
+     "url":"./",
      "symbol":"ETH",
-     "sizeunit":"Mgas",
-     "priceunit":"Gwei",
      "satPerUnit": 1000000000.0,
-     "feelevel": 16,
+     "feelevel": 1,
      "ranges": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 17, 20, 25, 30, 40, 50, 60, 70, 80, 100, 120, 140, 170, 200, 250, 300, 400, 500, 600, 700, 800, 1000, 1200, 1400, 1700, 2000, 2500, 3000, 4000, 5000, 6000, 7000, 8000, 10000 ],
      "show":   [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37],
      "colors": [
@@ -96,133 +35,10 @@ var config = [
    "#800080", "#ac00ac", "#d800d8", "#ff00ff", "#ff2cff", "#ff58ff", "#ff80ff",
    "#000000"
              ],
-     "inc": true},
-    {"name":"BCH",
-     "classname": "bch",
-     "title":"Bitcoin Cash - BCHN 22.0.0.",
-     "url":"https://johoe.jochen-hoenicke.de/queue/cash/",
-     "sizeunit":"MB",
-     "priceunit":"sat/B",
-     "symbol":"BCH",
-     "satPerUnit": 100000000.0,
-     "feelevel": 1,
-     "ranges": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 17, 20, 25, 30, 40, 50, 60, 70, 80, 100, 120, 140, 170, 200, 250, 300, 400, 500, 600, 700, 800, 1000, 1200, 1400, 1700, 2000, 2500, 3000, 4000, 5000, 6000, 7000, 8000, 10000 ],
-     "show":   [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9,  13, 15, 16, 17, 18, 19, 20, 21,22,23,24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 ],
-     "colors": [
-   "#535154", "#400080", "#5600ac", "#6100c2", "#6c00d8", "#7600ec", "#7f00ff", "#9020ff",
-   "#c040ff", "#0000ac", "#0000c2", "#0000d8", "#0000ec", "#0000ff", "#2c2cff", "#5858ff", "#8080ff",
-   "#008000", "#00a000", "#00c000", "#00e000", "#30e030", "#60e060", "#90e090",
-   "#808000", "#989800", "#b0b000", "#c8c800", "#e0e000", "#e0e030", "#e0e060",
-//   "#800000", "#a00000", "#c00000", "#e00000", "#e02020", //"#e04040", "#e06060",
-//   "#800080", "#ac00ac", "#d800d8", "#ff00ff", "#ff2cff", "#ff58ff", "#ff80ff",
-   "#000000" ],
-     "inc": true},
-    {"name":"BSV",
-     "classname": "bsv",
-     "title":"Bitcoin SV 1.0.3",
-     "url":"https://sv.jochen-hoenicke.de/queuesv/",
-     "sizeunit":"MB",
-     "priceunit":"sat/B",
-     "symbol":"BSV",
-     "satPerUnit": 100000000.0,
-     "feelevel": 2,
-     "ranges": [ 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1, 1.2, 1.4, 1.7, 2, 2.5, 3, 4, 5, 6, 7, 8, 10, 12, 14, 17, 20, 25, 30, 40, 50, 60, 70, 80, 100, 120, 140, 170, 200, 250, 300, 400, 500, 600, 700, 800, 1000 ],
-     "show":   [ 0, 1, 2, 3, 4, 5, 6, 7, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,22,23,24, 25, 27, 29, 31, 33, 35, 37 ],
-     "colors": [
-   "#535154", "#0000ac", "#0000c2", "#0000d8", "#0000ec", "#0000ff", "#2c2cff", "#5858ff", "#8080ff",
-   "#008000", "#00a000", "#00c000", "#00e000", "#30e030", "#60e060", "#90e090",
-   "#808000", "#989800", "#b0b000", "#c8c800", "#e0e000", "#e0e030", "#e0e060",
-   "#800000", "#a00000", "#c00000", "#e00000", "#e02020", "#e04040", //"#e06060",
-   //"#800080", "#ac00ac", "#d800d8", "#ff00ff", "#ff2cff", "#ff58ff", "#ff80ff",
-   "#000000"
-             ],
-      "inc": true},
-    {"name":"DOGE",
-     "classname": "doge",
-     "title":"Dogecoin 1.14.2",
-     "url":"https://johoe.jochen-hoenicke.de/queue/doge/",
-     "symbol":"DOGE",
-     "priceunit":"DOGE/kB",
-     "sizeunit":"MB",
-     "satPerUnit": 100000000.0,
-     "feelevel": 1,
-     "ranges": [ 0, .1, .2, .3, .4, .5, .6, .7, .8, 1, 1.2, 1.4, 1.7, 2, 2.5, 3, 4, 5, 6, 7, 8, 10, 12, 14, 17, 20, 25, 30, 40, 50, 60, 70, 80, 100, 120, 140, 170, 200, 250, 300, 400, 500, 600, 700, 800, 1000 ],
-     "show":   [ 0, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,22,23,24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 45 ],
-     "colors": [
-   "#535154", "#400080", "#5600ac", "#6100c2", "#6c00d8", "#7600ec", "#7f00ff", "#9020ff",
-   "#c040ff", "#0000ac", "#0000c2", "#0000d8", "#0000ec", "#0000ff", "#2c2cff", "#5858ff", "#8080ff",
-   "#008000", "#00a000", "#00c000", "#00e000", "#30e030", "#60e060", "#90e090",
-   "#808000", "#989800", "#b0b000", "#c8c800", "#e0e000", "#e0e030", "#e0e060",
-//   "#800000", "#a00000", "#c00000", "#e00000", "#e02020", "#e04040", "#e06060",
-//   "#800080", "#ac00ac", "#d800d8", "#ff00ff", "#ff2cff", "#ff58ff", "#ff80ff",
-   "#000000"],
-     "inc": true},
-    {"name":"LTC",
-     "classname": "ltc",
-     "title":"Litecoin Core with higher memory limit.",
-     "url":"https://johoe.jochen-hoenicke.de/queue/litecoin/",
-     "sizeunit":"MB",
-     "priceunit":"lit/B",
-     "symbol":"LTC",
-     "satPerUnit": 100000000.0,
-     "feelevel": 1,
-     "ranges": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 17, 20, 25, 30,40, 50, 60, 70, 80,100, 120, 140, 170, 200, 250, 300, 400, 500, 600, 700, 800, 1000, 1200, 1400, 2000, 3000, 5000, 7000, 10000 ],
-     "show":   [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 ],
-     "colors": [
-   "#535154", "#400080", "#5600ac", "#6100c2", "#6c00d8", "#7600ec", "#7f00ff", "#9020ff",
-   "#c040ff", "#0000ac", "#0000c2", "#0000d8", "#0000ec", "#0000ff", "#2c2cff", "#5858ff", "#8080ff",
-   "#008000", "#00a000", "#00c000", "#00e000", "#30e030", "#60e060", "#90e090",
-   "#808000", "#989800", "#b0b000", "#c8c800", "#e0e000", "#e0e030", "#e0e060",
-   "#800000", "#a00000", "#c00000", "#e00000", "#e02020", //"#e04040", "#e06060",
-//   "#800080", "#ac00ac", "#d800d8", "#ff00ff", "#ff2cff", "#ff58ff", "#ff80ff",
-   "#000000"
-                ],
-     "inc": true}, 
-/*
-    {"name":"LTC",
-     "classname": "ltc",
-     "title":"Litecoin Core",
-     "url":"https://jochen-hoenicke.de/queue/litecoin/",
-     "sizeunit":"MB",
-     "priceunit":"sat/B",
-     "symbol":"LTC",
-     "satPerUnit": 100000000.0,
-     "feelevel": 0,
-     "ranges": [ 0, 5,10,20,30,40,50,60,70,80,90,100,120,140,160,180,200,220,240,260,280,300,350,400,450,500,550,600,650,700,750,800,850,900,950,1000 ],
-     "show":   [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 13, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35 ],
-     "colors": [
-   "#535154", "#400080", "#5600ac", "#6100c2", "#6c00d8", "#7600ec", "#7f00ff", "#9020ff",
-   "#c040ff", "#0000ac", "#0000c2", "#0000d8", "#0000ec", "#0000ff", "#2c2cff", "#5858ff", "#8080ff",
-   "#008000", "#00a000", "#00c000", "#00e000", "#30e030", "#60e060", "#90e090",
-   "#808000", "#989800", "#b0b000", "#c8c800", "#e0e000", "#e0e030", "#e0e060",
-   //"#800000", "#a00000", "#c00000", "#e00000", "#e02020", //"#e04040", "#e06060",
-//   "#800080", "#ac00ac", "#d800d8", "#ff00ff", "#ff2cff", "#ff58ff", "#ff80ff",
-   "#000000"
-                ],
-     "inc": false},
-*/
-    {"name":"DASH",
-     "classname": "dash",
-     "title":"Dash Core v0.16.1.1 with default memory limit",
-     "url":"https://johoe.jochen-hoenicke.de/queue/dash/",
-     "sizeunit":"MB",
-     "priceunit":"Duff/B",
-     "symbol":"DASH",
-     "satPerUnit": 100000000.0,
-     "feelevel": 1,
-     "ranges": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 17, 20, 25, 30, 40, 50, 60, 70, 80, 100, 120, 140, 170, 200, 250, 300, 400, 500, 600, 700, 800, 1000, 1200, 1400, 1700, 2000, 2500, 3000, 4000, 5000, 6000, 7000, 8000, 10000 ],
-     "show":   [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37 ],
-     "colors": [
-   "#535154", "#0000ac", "#0000c2", "#0000d8", "#0000ec", "#0000ff", "#2c2cff", "#5858ff", "#8080ff",
-   "#008000", "#00a000", "#00c000", "#00e000", "#30e030", "#60e060", "#90e090",
-   "#808000", "#989800", "#b0b000", "#c8c800", "#e0e000", "#e0e030", "#e0e060",
-   "#800000", "#a00000", "#c00000", "#e00000", "#e02020", "#e04040", "#e06060",
-   "#800080", "#ac00ac", "#d800d8", "#ff00ff", "#ff2cff", "#ff58ff", "#ff80ff",
-   "#000000"
-             ],
      "inc": true}
 ];
-var periods = ["2h", "8h", "24h", "2d", "4d", "1w", "2w", "30d", "3m", "6m", "1y", "all"];
+//var periods = ["2h", "8h", "24h", "2d", "4d", "1w", "2w", "30d", "3m", "6m", "1y", "all"];
+var periods = ["2h", "8h", "24h", "2d", "4d", "1w", "2w"];
 
 var reloader;
 var reloadInterval = 0;
@@ -236,7 +52,7 @@ var currtimespan;
 function units(chart) {
     switch (chart) {
     case 0: return "tx";
-    case 1: return config[currconfig].sizeunit;
+    case 1: return "MGas";
     case 2: return config[currconfig].symbol;
     }
 }
@@ -249,8 +65,8 @@ function scale(chart) {
 }
 function title(chart) {
     switch (chart) {
-    case 0: return "Unconfirmed Transaction Count (Mempool)";
-    case 1: return "Mempool Size in " + config[currconfig].sizeunit;
+    case 0: return "Pending Transaction count";
+    case 1: return "TxPool Gas (in Millions)";
     case 2: return "Pending Transaction Fee in " + config[currconfig].symbol;
     }
 }
@@ -442,7 +258,7 @@ function convertData(raw, dataidx, unit) {
     for (j = 0; j < show.length; j++) {
         var name = config[currconfig].ranges[show[j]];
         var legend =
-            j == show.length-1 ? (name+"+ "+priceunit) :
+            j == show.length-1 ? (name+"+ GWei") :
             name+"-"+config[currconfig].ranges[show[j+1]];
         var color = config[currconfig].colors[j];
         converted.push({
@@ -472,6 +288,11 @@ function showChart(raw, dataidx, container, unit) {
                 fill: 0.66,
                 steps: false
             },
+        },
+        watermark: {
+           mode: "image",
+           src: "logo.svg",
+           position: "c",
         },
         selection: { mode: "x" },
         xaxis: { mode: "time", timezone: "browser" },
@@ -511,6 +332,9 @@ function showMempool(rawdata) {
 }
 
 function zoomData(rawdata) {
+    storeData(rawdata, 0, 1);
+    storeData(rawdata, 1, 1000000.0);
+    storeData(rawdata, 2, config[currconfig].satPerUnit);
     for (var i = 0; i < 3; i++) {
         storeData(rawdata, i, scale(i));
         charts[i].setData(updateData(charts[i].getData(), i));
